@@ -1,9 +1,10 @@
 import Hero from "@/components/Hero";
-import FeaturedServices from "@/components/FeaturedServices";
 import ServicesSection from "@/components/ServicesSection";
-import FeaturedAbout from "@/components/FeaturedAbout";
+import PerformanceFacts from "@/components/PerformanceFacts";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import FeaturedReveiws from "@/components/FeaturedReveiws";
+import CustomerJourney from "@/components/CustomerJourney";
+import OurCustomersMarquee from "@/components/OurCustomersMarquee";
 import ContactCTA from "@/components/ContactCTA";
 
 
@@ -13,12 +14,18 @@ export default function Home() {
   return (
     <div className="text-2xl">
       <Hero></Hero>
+
+      <OurCustomersMarquee></OurCustomersMarquee>
+
       <ServicesSection></ServicesSection>
-      <FeaturedServices></FeaturedServices>
       <FeaturedProjects></FeaturedProjects>
       <FeaturedReveiws></FeaturedReveiws>
-      <FeaturedAbout></FeaturedAbout>
       <ContactCTA></ContactCTA>
+
+      <PerformanceFacts></PerformanceFacts>
+
+      <CustomerJourney></CustomerJourney>
+
     </div>
   );
 }

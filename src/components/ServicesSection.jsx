@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import ServiceCard from "./ServiceCard";
 
 import { Button } from "./ui/button";
 import {
 	faChartSimple,
+	faCircle,
 	faClapperboard,
 	faCode,
 	faGlobe,
@@ -12,67 +13,76 @@ import {
 	faLineChart,
 	faPieChart,
 	faServer,
-    faSoap,
+	faSoap,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function ServicesSection() {
 	return (
-		<div className="py-20 flex w-full bg-primary flex-col justify-center place-items-center text-center gap-8 text-light border-y-2 border-y-light">
+		<div className="py-20 flex w-full bg-primary flex-col justify-center place-items-center text-center gap-8 my-20 text-light ">
 			{
 				//SECT: Title & Button
 			}
-			<div className="flex justify-between place-items-center gap-4 w-full sm:w-3/5">
-				<h2 className="text-2xl sm:text-5xl">Our Services</h2>
-				<Link href={"/services"}>
-					<Button>SEE ALL</Button>
+			<div className="flex justify-between place-items-center gap-4 w-full sm:w-4/5">
+				<h2 className="text-2xl sm:text-6xl">Our Services</h2>
+				<Link href={"/services"} className="bg-white rounded-lg py-2 font-semibold px-4">
+				See All
 				</Link>
 			</div>
 
 			{
 				//SECT: Three cards
-			}
-			<div className="flex flex-col xl:flex-row justify-center place-items-center xl:place-items-stretch gap-4 text-dark w-full">
-				<div className="flex flex-col gap-4">
-					<span className="fa-layers fa-fw fa-lg mx-auto my-8">
-						<FontAwesomeIcon icon={faGlobe}  className="text-6xl"/>
-						<FontAwesomeIcon
-							icon={faLaptop}
-							transform="shrink-6 left-4 down-3"
-							inverse
-                            className="text-8xl"
-						/>
-					</span>
-                    <h3 className="text-6xl">Websites</h3>
-					<p className="text-2xl">
+				<div className="flex flex-col gap-6 sm:gap-0 md:flex-row justify-evenly w-11/12 mt-12">
+					<ServiceCard
+						title="Websites"
+						text="
 						Ensure your business reaches its full potential with our
 						professional website design services. We create visually
 						stunning, responsive websites tailored to your brand,
 						helping you connect with your audience and achieve your
 						goals.
-					</p>
-				</div>
-				<div className="flex">
-					<FontAwesomeIcon icon={faCode} />
-					<FontAwesomeIcon icon={faServer} />
-					<p>
+					"
+					>
+						<FontAwesomeIcon
+							icon={faGlobe}
+							mask={faCircle}
+							className="text-6xl"
+							transform={"shrink-4"}
+						/>
+					</ServiceCard>
+					<ServiceCard
+						title="Custom Software"
+						text="
 						Streamline your operations with our bespoke software
 						solutions. We design, develop, and deploy software
 						tailored to meet your unique needs, improving efficiency
 						and driving innovation in your business.
-					</p>
-				</div>
-				<div className="flex">
-					<FontAwesomeIcon icon={faLineChart} />
-					<FontAwesomeIcon icon={faPieChart} />
-					<FontAwesomeIcon icon={faChartSimple} />
-					<p>
+					"
+					>
+						<FontAwesomeIcon
+							icon={faCode}
+							mask={faCircle}
+							className="text-6xl"
+							transform={"shrink-6"}
+						/>
+					</ServiceCard>
+					<ServiceCard
+						title="Data Analytics"
+						text="
 						Harness the power of your data with our expert analytics
 						services. We provide actionable insights to help you
 						make informed decisions, optimize performance, and
 						achieve measurable results for your organization.
-					</p>
+					"
+					>
+						<FontAwesomeIcon
+							icon={faPieChart}
+							mask={faCircle}
+							className="text-6xl"
+							transform={"shrink-4"}
+						/>
+					</ServiceCard>
 				</div>
-			</div>
+			}
 		</div>
 	);
 }

@@ -47,6 +47,7 @@
   /* my theme */
   --color-primary: transparent;
   --color-white: white;
+  --color-primary-dark: #0b231f;
 }
 
 :root {
@@ -147,5 +148,5 @@
 }
 
 .bg-pattern {
-  background-image: url("https://www.transparenttextures.com/patterns/random-grey-variations.png");
+  /* background-image: url("https://www.transparenttextures.com/patterns/random-grey-variations.png"); */
 }

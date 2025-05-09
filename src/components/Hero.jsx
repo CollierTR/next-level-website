@@ -7,7 +7,7 @@ export default function Hero() {
 		<div className="flex justify-center place-items-center relative overflow-hidden min-h-screen before:absolute before:top-0 before:start-1/2  dark:before:bg-[url('https://preline.co/assets/svg/examples-dark/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:size-full before:-z-1 before:transform before:-translate-x-1/2">
 			<div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10">
 				{/* Title */}
-				<div className="mt-5 max-w-xl text-center mx-auto">
+				<div className="mt-5 max-w-4xl text-center mx-auto">
 					<h1 className="block font-bold text-black text-4xl md:text-5xl lg:text-6xl dark:text-neutral-200">
 						{/* Tech Shouldn't Be Hard<br />Let Us Simplify It for You! */}
 						Ready to Take Your Business to the Next Level?
@@ -16,8 +16,8 @@ export default function Hero() {
 				</div>
 				{/* End Title */}
 
-				<div className="mt-5 max-w-3xl text-center mx-auto">
-					<p className="text-lg text-black dark:text-neutral-400 lg:text-nowrap">
+				<div className="mt-5 text-center mx-auto">
+					<p className="text-xl text-black dark:text-neutral-400">
 						{/* We specialize in data driven Websites and Business technology that help drive you revenue! */}
 						Maximize your profit with results-oriented websites and
 						business technology tailored to your needs.
@@ -32,7 +32,7 @@ export default function Hero() {
 						className={"text-2xl py-6"}
                         asChild
 					>
-                        <Link href={'/dfhdkhf'}>
+                        <Link href={'/contact'}>
 						Let’s Get Started!
                         </Link>
 					</Button>
