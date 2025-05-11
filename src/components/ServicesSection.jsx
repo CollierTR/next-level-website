@@ -18,20 +18,20 @@ import {
 
 export default function ServicesSection() {
 	return (
-		<div className="py-20 flex w-full bg-primary flex-col justify-center place-items-center text-center gap-8 my-20 text-light ">
+		<div className="py-20 flex w-full bg-primary flex-col justify-center place-items-center text-center gap-8 md:my-20 text-light ">
 			{
 				//SECT: Title & Button
 			}
-			<div className="flex justify-between place-items-center gap-4 w-full sm:w-4/5">
+			<div className="flex justify-between place-items-center gap-4 w-4/5 md:w-4/5">
 				<h2 className="text-2xl sm:text-6xl">Our Services</h2>
-				<Link href={"/services"} className="bg-white rounded-lg py-2 font-semibold px-4">
+				<Link href={"/services"} className="bg-white text-lg md:text-2xl rounded-lg py-1 md:py-2 font-semibold px-4">
 				See All
 				</Link>
 			</div>
 
 			{
 				//SECT: Three cards
-				<div className="flex flex-col gap-6 sm:gap-0 md:flex-row justify-evenly w-11/12 mt-12">
+				<div className="flex flex-col gap-6 sm:gap-0 md:flex-row justify-evenly w-10/12 md:11/12 mt-2 md:mt-12">
 					<ServiceCard
 						title="Websites"
 						text="

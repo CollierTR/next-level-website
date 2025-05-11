@@ -4,7 +4,7 @@ import ReviewCard from "./ReviewCard"
 export default function Reviews() {
 
   return (
-    <div className="flex relative py-20 h-auto bg-dark   xl:[1740px] flex-col justify-center place-items-center text-center my-20 w-full">
+    <div className="flex relative md:py-20 h-auto bg-dark xl:[1740px] flex-col justify-center place-items-center text-center my-20 w-full">
 
 
       <div className=' z-20 text-light flex flex-col gap-5 sm:gap-12 justify-center place-items-center w-full'>

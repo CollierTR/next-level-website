@@ -27,7 +27,7 @@ export default function CustomerJourney() {
 		console.log("Page scroll: ", latest);
 		if (!triggered && latest >= 0.6) {
 			setTriggered(true);
-			ctaControls.start({ width: "100%", textAlign: "center", y: [0, 40, 60, 40, 0], rotate: [0, 9, 0] }); // end animation
+			ctaControls.start({ width: "100%", textAlign: "center", y: [0, 40, 60, 40, 0], rotate: [0, 6, 0] }); // end animation
 			timelineControls.start({ width: 0, overflowX: "hidden" }); // end animation
 			setCtaText("Let's get Started!");
 		} else if (triggered && latest < 0.6) {
@@ -39,15 +39,15 @@ export default function CustomerJourney() {
 	});
 
 	return (
-		<section className="min-h-screen flex justify-center items-start my-20">
-			<div ref={scrollableArea} className="flex w-5/6 h-full gap-10">
+		<section className="min-h-screen hidden md:flex justify-center items-start my-20">
+			<div ref={scrollableArea} className="flex flex-col w-5/6 h-full gap-10">
 				{/* Sticky Sidebar */}
 				<motion.div
 					className="flex flex-col w-1/2 justify-start sticky top-2/6 h-fit gap-8"
 					animate={ctaControls} // Attach animation controls
 					initial={{}} // Initial state
 					transition={{
-						duration: 0.8,
+						duration: 0.5,
 						ease: "easeIn",
 						type: "tween",
 					}}

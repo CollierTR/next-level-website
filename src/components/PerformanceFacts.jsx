@@ -2,8 +2,8 @@
 
 export default function PerformanceFacts() {
   return (
-    <div className="min-h-screen flex justify-center place-items-center">
-        <div className="w-10/12 max-w-[1300px] h-full grid grid-cols-3 grid-rows-2 gap-6 justify-center place-items-center mx-auto">
+    <div className="min-h-screen md:flex justify-center place-items-center hidden">
+        <div className="w-10/12 max-w-[1300px] h-full grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6 justify-center place-items-center mx-auto">
             <div className="size-full col-span-2 bg-primary-dark text-white outline-2 p-12 pb-24 rounded-xl">
                 <p>
                     <span className="text-7xl">100%</span>

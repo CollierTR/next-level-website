@@ -1,3 +1,5 @@
+'use client'
+
 import { faCircle, faMoneyBill } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

@@ -15,7 +15,7 @@ export default function Home() {
     <div className="text-2xl">
       <Hero></Hero>
 
-      <OurCustomersMarquee></OurCustomersMarquee>
+      {/* <OurCustomersMarquee></OurCustomersMarquee> */}
 
       <ServicesSection></ServicesSection>
       <FeaturedProjects></FeaturedProjects>
