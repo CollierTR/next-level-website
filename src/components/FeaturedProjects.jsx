@@ -12,7 +12,7 @@ export default function FeaturedProjects() {
 				</Link>
 			</div>
 
-			<div className="flex flex-col md:flex-row gap-6 mt-8 md:mt-14">
+			<div className="flex flex-col lg:flex-row gap-6 mt-8 md:mt-14">
 				<ProjectCard></ProjectCard>
 				<ProjectCard></ProjectCard>
 				<ProjectCard></ProjectCard>

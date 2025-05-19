@@ -16,8 +16,8 @@ export default function Reviews() {
         </div>
       </div>
 
-      <div className={`bg-[url('/stoneHouse.jpg')] opacity-35 bg-no-repeat bg-cover bg-center h-full w-full overflow-hidden absolute z-10`}>
-      </div>
+      {/* <div className={`opacity-35 bg-no-repeat bg-cover bg-center h-full w-full overflow-hidden absolute z-10`}>
+      </div> */}
 
     </div>
   )

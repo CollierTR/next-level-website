@@ -31,7 +31,7 @@ export default function ServicesSection() {
 
 			{
 				//SECT: Three cards
-				<div className="flex flex-col gap-6 sm:gap-0 md:flex-row justify-evenly w-10/12 md:11/12 mt-2 md:mt-12">
+				<div className="flex flex-col gap-6  lg:flex-row justify-evenly place-items-center w-10/12 md:11/12 mt-2 md:mt-12">
 					<ServiceCard
 						title="Websites"
 						text="

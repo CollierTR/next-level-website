@@ -39,8 +39,8 @@ export default function CustomerJourney() {
 	});
 
 	return (
-		<section className="min-h-screen hidden md:flex justify-center items-start my-20">
-			<div ref={scrollableArea} className="flex flex-col w-5/6 h-full gap-10">
+		<section className="min-h-screen lg:flex hidden justify-center items-start my-20">
+			<div ref={scrollableArea} className="flex w-5/6 h-full gap-10">
 				{/* Sticky Sidebar */}
 				<motion.div
 					className="flex flex-col w-1/2 justify-start sticky top-2/6 h-fit gap-8"
