@@ -24,14 +24,14 @@ export default function ServicesSection() {
 			}
 			<div className="flex justify-between place-items-center gap-4 w-4/5 md:w-4/5">
 				<h2 className="text-2xl sm:text-6xl">Our Services</h2>
-				<Link href={"/services"} className="bg-white text-lg md:text-2xl rounded-lg py-1 md:py-2 font-semibold px-4">
+				<Link href={"/services"} className="bg-white text-lg md:text-2xl rounded-lg py-1 md:py-2 hover:scale-105 font-semibold px-4">
 				See All
 				</Link>
 			</div>
 
 			{
 				//SECT: Three cards
-				<div className="flex flex-col gap-6  lg:flex-row justify-evenly place-items-center w-10/12 md:11/12 mt-2 md:mt-12">
+				<div className="flex flex-col gap-6  lg:flex-row justify-evenly place-items-stretch w-10/12 md:11/12 mt-2 md:mt-12">
 					<ServiceCard
 						title="Websites"
 						text="

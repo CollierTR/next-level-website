@@ -47,16 +47,25 @@ export default function Nav() {
 					alt="Next Level Logo"
 					className="h-auto w-64 object-contain glow"
 					initial={{
-						filter: "drop-shadow(0rem 0rem 0.15rem rgb(255, 255, 255))", scale: 1,
+						filter: "drop-shadow(0rem 0rem 0.15rem rgb(255, 255, 255))",
+						scale: 1,
 					}}
-					whileHover={{filter: 'drop-shadow(0rem 0rem 0.3rem rgb(255,255,255))', scale:1.03, transition: {duration: 1.5, ease: easeInOut, bounce: spring}, }}
+					whileHover={{
+						filter: "drop-shadow(0rem 0rem 0.3rem rgb(255,255,255))",
+						scale: 1.03,
+						transition: {
+							duration: 1.5,
+							ease: easeInOut,
+							bounce: spring,
+						},
+					}}
 				/>
 			</Link>
 
 			<div className="flex justify-end place-items-center text-4xl gap-8 w-full md:w-fit">
 				<Link
 					href={"/contact"}
-					className=" bg-white  px-4 py-2 text-xl rounded-xl cursor-pointer font-semibold hidden lg:block"
+					className=" bg-white  px-4 py-2 text-xl rounded-xl cursor-pointer font-semibold hidden lg:block hover:scale-105"
 				>
 					Free Consultation
 				</Link>

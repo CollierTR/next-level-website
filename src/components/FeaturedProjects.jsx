@@ -7,7 +7,7 @@ export default function FeaturedProjects() {
 		<div className="flex flex-col justify-start place-items-center w-11/12 md:my-20 mx-auto">
 			<div className="flex justify-between place-items-center gap-4 w-11/12 md:w-4/5">
 				<h2 className="text-2xl sm:text-6xl">Featured Projects</h2>
-				<Link href={"/services"} className="bg-white text-lg md:text-2xl text-nowrap rounded-lg py-1 md:py-2 font-semibold px-4">
+				<Link href={"/services"} className="bg-white text-lg hover:scale-105 md:text-2xl text-nowrap rounded-lg py-1 md:py-2 font-semibold px-4">
 				See All
 				</Link>
 			</div>

@@ -28,7 +28,7 @@ export default function TimelineItem({
                 !isLast && <div className="grow w-2 bg-black"></div>
                 }
             </div>
-            <div className="flex flex-col justify-start mb-24">
+            <div className="flex text-white flex-col justify-start mb-24">
                 <p className="text-2xl font-medium">{mainText}</p>
                 <p className="text-xl">{subText}</p>
             </div>

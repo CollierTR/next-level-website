@@ -54,7 +54,7 @@ export default function CustomerJourney() {
 				>
 					<AnimatePresence mode="wait">
 						<motion.p
-							className="text-7xl mb-4"
+							className="text-7xl mb-4 text-white"
 							initial={{ opacity: 0, scale: 0, y: 0 }}
 							animate={{ opacity: 1, scale: 1 }}
 							exit={{ opacity: 0, scale: 0 }}

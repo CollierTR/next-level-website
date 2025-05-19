@@ -1,4 +1,5 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { motion, easeInOut, spring } from "motion/react";
 import {
 	faCircle,
 	faEnvelope,
@@ -16,11 +17,24 @@ export default function Footer() {
 						{/* <p className="lg:text-start text-center">
 							Stay in touch!
 						</p> */}
-						<img
-							src="Next Level (text only).png"
-							alt="Next Level Logo"
-							className="h-auto w-50 md:w-54 object-contain md:mx-0 mx-auto"
-						/>
+				<motion.img
+					src="Next Level (text only).png"
+					alt="Next Level Logo"
+					className="h-auto w-64 object-contain glow"
+					initial={{
+						filter: "drop-shadow(0rem 0rem 0.15rem rgb(255, 255, 255))",
+						scale: 1,
+					}}
+					whileHover={{
+						filter: "drop-shadow(0rem 0rem 0.3rem rgb(255,255,255))",
+						scale: 1.03,
+						transition: {
+							duration: 1.5,
+							ease: easeInOut,
+							bounce: spring,
+						},
+					}}
+				/>
 						<div className="flex justify-center gap-4">
 							<a href="mailto:tristancollier777@gmail.com">
 								<FontAwesomeIcon
