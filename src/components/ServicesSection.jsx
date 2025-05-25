@@ -2,18 +2,12 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ServiceCard from "./ServiceCard";
 
-import { Button } from "./ui/button";
+
 import {
-	faChartSimple,
 	faCircle,
-	faClapperboard,
 	faCode,
 	faGlobe,
-	faLaptop,
-	faLineChart,
 	faPieChart,
-	faServer,
-	faSoap,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function ServicesSection() {

@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { motion, easeInOut, spring } from "motion/react";
 import {
@@ -9,6 +12,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
 export default function Footer() {
+	const [isClient, setIsClient] = useState(false);
+
+	useEffect(() => {
+		setIsClient(true);
+	}, []);
+
 	return (
 		<footer>
 			<div className="w-full py-8 mt-24 flex flex-col justify-center gap-8  place-items-center border-t-2 border-t-primary text-white">
@@ -17,54 +26,56 @@ export default function Footer() {
 						{/* <p className="lg:text-start text-center">
 							Stay in touch!
 						</p> */}
-				<motion.img
-					src="Next Level (text only).png"
-					alt="Next Level Logo"
-					className="h-auto w-64 object-contain glow"
-					initial={{
-						filter: "drop-shadow(0rem 0rem 0.15rem rgb(255, 255, 255))",
-						scale: 1,
-					}}
-					whileHover={{
-						filter: "drop-shadow(0rem 0rem 0.3rem rgb(255,255,255))",
-						scale: 1.03,
-						transition: {
-							duration: 1.5,
-							ease: easeInOut,
-							bounce: spring,
-						},
-					}}
-				/>
-						<div className="flex justify-center gap-4">
-							<a href="mailto:tristancollier777@gmail.com">
-								<FontAwesomeIcon
-									icon={faEnvelope}
-									transform="shrink-6"
-									mask={faCircle}
-									className="hover:text-primary-light hover-bounce cursor-pointer"
-								/>
-							</a>
-							<a href="tel:5402206532">
-								<FontAwesomeIcon
-									icon={faPhone}
-									transform="shrink-6"
-									mask={faCircle}
-									className="hover:text-primary-light hover-bounce cursor-pointer"
-								/>
-							</a>
-							<a href="https://github.com/CollierTR">
-								<FontAwesomeIcon
-									icon={faGithub}
-									className="hover:text-primary-light hover-bounce cursor-pointer"
-								/>
-							</a>
-							<a href="https://www.linkedin.com/in/tristan-collier-263b67263/">
-								<FontAwesomeIcon
-									icon={faLinkedin}
-									className="hover:text-primary-light hover-bounce cursor-pointer"
-								/>
-							</a>
-						</div>
+						<motion.img
+							src="Next Level (text only).png"
+							alt="Next Level Logo"
+							className="h-auto w-64 object-contain glow"
+							initial={{
+								filter: "drop-shadow(0rem 0rem 0.15rem rgb(255, 255, 255))",
+								scale: 1,
+							}}
+							whileHover={{
+								filter: "drop-shadow(0rem 0rem 0.3rem rgb(255,255,255))",
+								scale: 1.03,
+								transition: {
+									duration: 1.5,
+									ease: easeInOut,
+									bounce: spring,
+								},
+							}}
+						/>
+						{isClient && (
+							<div className="flex justify-center gap-4">
+								<a href="mailto:tristancollier777@gmail.com">
+									<FontAwesomeIcon
+										icon={faEnvelope}
+										transform="shrink-6"
+										mask={faCircle}
+										className="hover:text-primary-light hover-bounce cursor-pointer"
+									/>
+								</a>
+								<a href="tel:5402206532">
+									<FontAwesomeIcon
+										icon={faPhone}
+										transform="shrink-6"
+										mask={faCircle}
+										className="hover:text-primary-light hover-bounce cursor-pointer"
+									/>
+								</a>
+								<a href="https://github.com/CollierTR">
+									<FontAwesomeIcon
+										icon={faGithub}
+										className="hover:text-primary-light hover-bounce cursor-pointer"
+									/>
+								</a>
+								<a href="https://www.linkedin.com/in/tristan-collier-263b67263/">
+									<FontAwesomeIcon
+										icon={faLinkedin}
+										className="hover:text-primary-light hover-bounce cursor-pointer"
+									/>
+								</a>
+							</div>
+						)}
 					</div>
 				</div>
 

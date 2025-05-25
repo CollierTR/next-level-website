@@ -11,10 +11,11 @@ export default function ContactCTA() {
 			</p>
 			<Link
 				href={"/contact"}
-				className="whitespace-nowrap hover:scale-105 bg-white py-2 md:py-3 px-6 rounded-xl md:text-4xl font-semibold"
+				// className="whitespace-nowrap hover:scale-105 bg-white py-2 md:py-3 px-6 rounded-xl md:text-4xl font-semibold"
+				className="bg-black text-white border border-white text-lg md:text-3xl py-4 font-semibold px-6 md:px-8 rounded-lg"
 
 			>
-				Get Started
+				Let's Get Started!
 			</Link>
 		</div>
 	);

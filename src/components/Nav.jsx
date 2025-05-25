@@ -71,7 +71,7 @@ export default function Nav() {
 				</Link>
 				<FontAwesomeIcon
 					icon={faBars}
-					className="cursor-pointer"
+					className="cursor-pointer text-white"
 					onClick={() => dispatch({ type: "openNav" })}
 				/>
 			</div>

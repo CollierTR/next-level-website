@@ -104,7 +104,7 @@ export default function Hero() {
 				<div className="mt-8 gap-3 flex justify-center hover:scale-105">
 					<Link
 						href={"/contact"}
-						className="bg-white text-lg md:text-2xl py-2 font-semibold px-5 md:px-6 rounded-lg"
+						className="bg-black text-white border border-white text-lg md:text-2xl py-2 font-semibold px-5 md:px-6 rounded-lg"
 					>
 						Let’s Get Started!
 					</Link>

@@ -1,5 +1,6 @@
 "use client";
 
+
 import Link from "next/link";
 import TimelineItem from "./TimelineItem";
 
@@ -65,7 +66,9 @@ export default function CustomerJourney() {
 						</motion.p>
 					</AnimatePresence>
 					<Link href="/contact">
-						<button className="px-8 font-semibold py-4 bg-white text-3xl rounded-lg">
+						<button 
+						className="bg-black text-white border border-white text-lg md:text-2xl py-4 font-semibold px-5 md:px-6 rounded-lg"
+						>
 							Schedule your Free Consultation!
 						</button>
 					</Link>

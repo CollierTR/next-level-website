@@ -1,6 +1,8 @@
 import ProjectCard from "./ProjectCard";
 import Link from "next/link";
-import { Button } from "./ui/button";
+import {projects} from '../projects'
+
+let filteredProjects = projects.filter(obj => obj.isFeatured === true)
 
 export default function FeaturedProjects() {
 	return (
@@ -13,9 +15,16 @@ export default function FeaturedProjects() {
 			</div>
 
 			<div className="flex flex-col lg:flex-row gap-6 mt-8 md:mt-14">
-				<ProjectCard></ProjectCard>
-				<ProjectCard></ProjectCard>
-				<ProjectCard></ProjectCard>
+				{
+					filteredProjects.map((project) => (
+						<ProjectCard 
+							projectName={project.name}
+							link={project.websiteLink}
+							img={project.img}
+							key={project.name}
+						/>
+					))
+				}
 					<Link href={'/contact'} className="bg-white text-center md:hidden text-lg w-fit mt-4 mx-auto md:text-2xl py-2 font-semibold px-5 md:px-6 rounded-lg">
 						See All Projects!
 					</Link>
