@@ -21,6 +21,7 @@ export default function TimelineItem({
 		<motion.div
 			className="flex justify-stretch place-items-stretch gap-6"
 			initial={{ opacity: 0 }}
+			viewport={{ once: true }}
 			whileInView={{ opacity: 1 }}
 			transition={{ duration: 1, ease: "easeIn" }}
 		>
@@ -39,7 +40,7 @@ export default function TimelineItem({
 					{!isLast && <div className="grow w-2 bg-black"></div>}
 				</div>
 			)}
-			<div className="flex text-white flex-col justify-start mb-24">
+			<div className="flex text-white flex-col justify-start mb-24 gap-2">
 				<p className="text-2xl font-medium">{mainText}</p>
 				<p className="text-xl">{subText}</p>
 			</div>
