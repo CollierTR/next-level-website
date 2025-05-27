@@ -127,25 +127,17 @@
 }
 
 .green-gradient {
-	/* background: #079b40; */
-	background: radial-gradient(circle, #195541 0%, #000000 110%);
-	/* background: radial-gradient(circle, #0a5e3b 65%, #000000 110%); */
-	/* background: radial-gradient(circle, #079b40 75%, #000000 110%); */
-	/* background: radial-gradient(circle, #19675b 0%, #0d332d 86%); */
-
-	/* background: radial-gradient(circle at 0.1% 1.1%, #041310, transparent 73%),radial-gradient(circle at 13.59% 94.84%, #19675b, transparent 87%),radial-gradient(circle at 90.00% 8.01%, #124940, transparent 67%),radial-gradient(circle at 94.27% 29.2%, #041310, transparent 88%),radial-gradient(circle at 97.19% 94.07%, #041310, transparent 100%),radial-gradient(circle at 50% 50%, #ffffff, #ffffff 100%) */
-
-	/* background-color:hsla(170,60%,25%,1);
-  background-image:
-  radial-gradient(at 37% 33%, hsla(170,60%,17%,0.7) 0px, transparent 50%),
-  radial-gradient(at 0% 98%, hsla(167,65%,4%,1) 0px, transparent 50%),
-  radial-gradient(at 1% 0%, hsla(170,60%,25%,1) 0px, transparent 50%),
-  radial-gradient(at 69% 74%, hsla(170,60%,17%,0.92) 0px, transparent 50%),
-  radial-gradient(at 99% 0%, hsla(167,65%,4%,1) 0px, transparent 50%); */
+	/* background: radial-gradient(circle, #195541 0%, #000000 110%); */
+	/* background: radial-gradient(circle at 50% 50%, #195541, #000000); */
+	background-image: radial-gradient( circle farthest-corner at 50.3% 47.3%,  #195541 0.1%, #000000);
 }
 
 .bg-pattern {
-	background-image: url("https://www.transparenttextures.com/patterns/random-grey-variations.png");
+	/* background-image: url("https://www.transparenttextures.com/patterns/random-grey-variations.png"); */
+	background-image: url("https://www.transparenttextures.com/patterns/checkered-pattern.png");
+	/* background-image: url("https://www.transparenttextures.com/patterns/triangles.png"); */
+
+
 }
 
 .no-scroll {

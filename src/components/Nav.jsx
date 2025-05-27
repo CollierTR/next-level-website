@@ -11,9 +11,15 @@ import {
 	spring,
 } from "motion/react";
 
-import { faBars, faHouse } from "@fortawesome/free-solid-svg-icons";
+import {
+	faBars,
+	faCircle,
+	faClose,
+	faHouse,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import { useReducer, useState, useEffect } from "react";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -21,7 +27,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
 export default function Nav() {
-	console.log("Nav component rendered");
+	const pathName = usePathname()
 
 	const reducer = (state, action) => {
 		switch (action.type) {
@@ -84,12 +90,26 @@ export default function Nav() {
 						onClick={() => dispatch({ type: "closeNav" })}
 					>
 						<div
-							className="flex w-1/3 bg-red-500"
+							className="flex flex-col  w-1/3 bg-primary-dark border-l-2 border-white rounded-l-2xl relative drop-shadow-black  drop-shadow-2xl"
 							onClick={(e) => {
 								e.stopPropagation();
 							}}
 						>
-							test
+								<FontAwesomeIcon
+									icon={faClose}
+									mask={faCircle}
+									className="text-4xl cursor-pointer absolute top-6 right-6"
+									transform={"shrink-6"}
+									color="white"
+									onClick={() => dispatch({ type: "closeNav" })}
+								/>
+							<div className="flex flex-col  grow justify-center place-items-center gap-10 text-4xl text-white">
+								<Link href={"/"} className={`link ${pathName === '/' ? ' ' : 'text-gray-400'}`}>Home</Link>
+								<Link href={"/contact"} className={`link ${pathName === '/contact' ? '' : 'text-gray-400'}`}>Contact</Link>
+								<Link href={"/contact"} className={`link ${pathName === '/contact' ? '' : 'text-gray-400'}`}>Services</Link>
+								<Link href={"/contact"} className={`link ${pathName === '/contact' ? '' : 'text-gray-400'}`}>About</Link>
+								{/* <img src="Next Level No BG.png" alt="" className="w-2/3" /> */}
+							</div>
 						</div>
 					</div>,
 
