@@ -99,7 +99,6 @@ export default function Nav() {
 									icon={faClose}
 									mask={faCircle}
 									className="text-4xl cursor-pointer absolute top-6 right-6"
-									// transform={"shrink-6"}
 									color="white"
 									onClick={() => dispatch({ type: "closeNav" })}
 								/>
