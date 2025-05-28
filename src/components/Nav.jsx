@@ -106,7 +106,7 @@ export default function Nav() {
 								<Link href={"/"} className={`link ${pathName === '/' ? ' ' : 'text-gray-400'}`}>Home</Link>
 								<Link href={"/contact"} className={`link ${pathName === '/contact' ? '' : 'text-gray-400'}`}>Contact</Link>
 								<Link href={"/services"} className={`link ${pathName === '/services' ? '' : 'text-gray-400'}`}>Services</Link>
-								<Link href={"/about"} className={`link ${pathName === '/about' ? '' : 'text-gray-400'}`}>About</Link>
+								{/* <Link href={"/about"} className={`link ${pathName === '/about' ? '' : 'text-gray-400'}`}>About</Link> */}
 							</div>
 						</div>
 					</div>,

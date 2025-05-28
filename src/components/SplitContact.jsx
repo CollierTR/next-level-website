@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const SplitContact = () => {
 	return (
-		<div className="w-11/12 flex justify-center mb-40 pt-44  gap-x-20 mx-auto lg:flex-row text-primary-light flex-col place-items-center lg:place-items-start gap-40">
+		<div className="w-11/12 flex justify-center mb-60 pt-44  gap-x-20 mx-auto lg:flex-row text-primary-light flex-col place-items-center lg:place-items-start gap-40">
 			<div className="flex-col flex gap-4 lg:gap-10 lg:w-5/12 w-10/12 blackOutline ">
 				<h1 className="lg:text-6xl text-primary-light text-5xl mb-4">
 					Let&apos;s Get in Touch!
@@ -19,7 +19,7 @@ const SplitContact = () => {
 						href={"/services"}
 						className="bg-white text-lg md:text-2xl rounded-lg py-1 md:py-2 hover:scale-105 font-semibold px-4"
 					>
-						Email
+						Call
 					</Link>
 					<Link
 						href={"/services"}
@@ -60,7 +60,7 @@ const SplitContact = () => {
 							required
 							id="firstName"
 							placeholder="John"
-							className="md:text-xl border-2 rounded-lg p-2 border-primary bg-black"
+							className="md:text-xl border-2 rounded-lg p-2 border-black bg-white"
 						/>
 					</span>
 					<span className="flex gap-2 flex-col md:w-3/4 w-10/12">
@@ -73,7 +73,7 @@ const SplitContact = () => {
 						<input
 							type="text"
 							placeholder="Doe"
-							className="md:text-xl border-2 rounded-lg p-2 border-primary bg-black"
+							className="md:text-xl border-2 rounded-lg p-2 border-black bg-white"
 							name="lastName"
 							required
 							id="lastName"
@@ -92,7 +92,7 @@ const SplitContact = () => {
 							Email:
 						</label>
 						<input
-							className="md:text-xl border-2 rounded-lg p-2 border-primary bg-black"
+							className="md:text-xl border-2 rounded-lg p-2 border-black bg-white"
 							type="email"
 							required
 							placeholder="example@email.com"
@@ -112,12 +112,12 @@ const SplitContact = () => {
 							id="text"
 							name="text"
 							placeholder="You're text here..."
-							className="ease-soft md:text-xl border-2 rounded-lg p-2 border-primary h-40 text-wrap bg-black"
+							className="ease-soft md:text-xl border-2 rounded-lg p-2 border-black h-40 text-wrap bg-white"
 						></textarea>
 					</span>
 					<button
 						type="submit"
-						className=" border-2 border-primary hover:border-primary-light text-white  bg-black rounded-lg w-10/12 md:w-3/4 md:text-2xl robo py-2 md:py-3"
+						className=" border border-black  text-white bg-black rounded-lg w-10/12 md:w-3/4 md:text-2xl py-2 md:py-3"
 					>
 						Submit
 					</button>
