@@ -14,18 +14,12 @@ export default function Home() {
   return (
     <div className="text-2xl">
       <Hero></Hero>
-
-      {/* <OurCustomersMarquee></OurCustomersMarquee> */}
-
       <ServicesSection></ServicesSection>
       <FeaturedProjects></FeaturedProjects>
       <FeaturedReveiws></FeaturedReveiws>
       <ContactCTA></ContactCTA>
-
       <PerformanceFacts></PerformanceFacts>
-
       <CustomerJourney></CustomerJourney>
-
     </div>
   );
 }

@@ -36,8 +36,8 @@ export default function ServiceCard({
 				scale :1
 			}}
 			whileHover={{
-				filter: "drop-shadow(0rem 0rem 0.25rem rgb(255,255,255))",
-				scale: 1.05,
+				filter: "drop-shadow(0rem 0rem 0.3rem rgb(255,255,255))",
+				scale: 1.0,
 				transition: {
 					duration: 0.5,
 					ease: easeInOut,
