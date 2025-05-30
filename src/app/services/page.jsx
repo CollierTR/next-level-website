@@ -13,6 +13,7 @@ export default function ProjectsPage() {
 							key={service.name}
 							title={service.name}
 							description={service.description}
+                            img={service.img}
                             flip={index%2===1}
 						/>
 					)
