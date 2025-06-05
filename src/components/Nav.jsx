@@ -2,12 +2,7 @@
 
 import {
 	motion,
-	useScroll,
-	useMotionValueEvent,
-	useAnimation,
-	AnimatePresence,
 	easeInOut,
-	easeOut,
 	spring,
 } from "motion/react";
 
@@ -15,13 +10,12 @@ import {
 	faBars,
 	faCircle,
 	faClose,
-	faHouse,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
-import { useReducer, useState, useEffect } from "react";
+import { useReducer } from "react";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
@@ -49,7 +43,7 @@ export default function Nav() {
 		<div className="fixed w-full flex justify-between place-items-center p-6 md:p-8 z-50">
 			<Link href={"/"} className="hidden md:block">
 				<motion.img
-					src="Next Level (text only).png"
+					src="/Next Level (text only).png"
 					alt="Next Level Logo"
 					className="h-auto w-64 object-contain glow"
 					initial={{

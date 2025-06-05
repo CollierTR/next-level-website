@@ -27,7 +27,7 @@ export default function Footer() {
 							Stay in touch!
 						</p> */}
 						<motion.img
-							src="Next Level (text only).png"
+							src="/Next Level (text only).png"
 							alt="Next Level Logo"
 							className="h-auto w-64 object-contain glow"
 							initial={{

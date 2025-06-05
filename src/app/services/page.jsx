@@ -14,6 +14,7 @@ export default function ProjectsPage() {
 							title={service.name}
 							description={service.description}
                             img={service.img}
+							link={`/services/${service.link}`}
                             flip={index%2===1}
 						/>
 					)
