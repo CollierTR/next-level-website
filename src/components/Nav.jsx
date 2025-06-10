@@ -84,7 +84,7 @@ export default function Nav() {
 						onClick={() => dispatch({ type: "closeNav" })}
 					>
 						<div
-							className="flex flex-col  w-1/3 xl:w-1/4 bg-primary-dark border-l-2 border-white rounded-l-2xl relative drop-shadow-black  drop-shadow-2xl"
+							className="flex flex-col w-10/12 md:w-1/3 xl:w-1/4 bg-primary-dark border-l-2 border-white rounded-l-2xl relative drop-shadow-black  drop-shadow-2xl"
 							onClick={(e) => {
 								e.stopPropagation();
 							}}
@@ -96,10 +96,10 @@ export default function Nav() {
 									color="white"
 									onClick={() => dispatch({ type: "closeNav" })}
 								/>
-							<div className="flex flex-col  grow justify-center place-items-center gap-10 2xl:gap-20 text-4xl text-white">
-								<Link href={"/"} className={`link ${pathName === '/' ? ' ' : 'text-gray-400'}`}>Home</Link>
-								<Link href={"/contact"} className={`link ${pathName === '/contact' ? '' : 'text-gray-400'}`}>Contact</Link>
-								<Link href={"/services"} className={`link ${pathName === '/services' ? '' : 'text-gray-400'}`}>Services</Link>
+							<div className="flex flex-col grow justify-center place-items-center gap-10 2xl:gap-20 text-4xl text-white">
+								<Link href={"/"} onClick={() => dispatch({ type: "closeNav" })} className={`link ${pathName === '/' ? ' ' : 'text-gray-400'}`}>Home</Link>
+								<Link href={"/contact"} onClick={() => dispatch({ type: "closeNav" })}  className={`link ${pathName === '/contact' ? '' : 'text-gray-400'}`}>Contact</Link>
+								<Link href={"/services"} onClick={() => dispatch({ type: "closeNav" })}  className={`link ${pathName === '/services' ? '' : 'text-gray-400'}`}>Services</Link>
 								{/* <Link href={"/about"} className={`link ${pathName === '/about' ? '' : 'text-gray-400'}`}>About</Link> */}
 							</div>
 						</div>

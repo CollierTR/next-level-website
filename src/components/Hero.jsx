@@ -16,65 +16,7 @@ import {
 
 export default function Hero() {
 	return (
-		<div className="flex justify-center place-items-center relative overflow-hidden min-h-screen  before:top-0 before:start-1/2 ">
-			 {/* <div className="w-[100%] h-screen fixed top-0 right-0  bg-pattern"></div> */}
-				{/*<motion.svg
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1 }}
-					transition={{ duration: 2, delay: 1 }}
-					width="100%"
-					height="100%"
-					xmlns="http://www.w3.org/2000/svg"
-					className="w-full absolute -top-10 left-40 transform"
-					style={{
-						transform:
-							"perspective(800px) rotateX(25deg) rotateY(15deg)",
-						transformOrigin: "center",
-					}}
-				>
-					<defs>
-						<pattern
-							id="grid"
-							width="100"
-							height="100"
-							patternUnits="userSpaceOnUse"
-						>
-							<rect
-								width="100"
-								height="100"
-								// fill="red"
-								fill="transparent"
-							/>
-							<path
-								d="M 100 0 L 0 0 0 100"
-								fill="none"
-								stroke="black"
-								strokeWidth="0.5"
-							/>
-						</pattern>
-					</defs>
-
-					<rect width="100%" height="100%" fill="url(#grid)" />
-
-					<motion.path
-						d="M200 700 L300 600 L350 650 L375 550 L425 575 L550 475 L600 570 L720 420 L740 455 L850 365 L900 400 L1125 175 l-10 40 L1125 175 l-40 10"
-						fill="none"
-						strokeWidth="3"
-						stroke="#87dac0"
-						initial={{
-							pathLength: 0,
-						}}
-						animate={{
-							pathLength: 1,
-						}}
-						transition={{
-							duration: 3, // Adjust animation duration
-							delay: 2,
-							ease: "easeInOut",
-						}}
-					/>
-				</motion.svg>
-			</div> */}
+		<div className="flex justify-center place-items-center relative overflow-hidden min-h-10/12 md:min-h-screen  before:top-0 before:start-1/2 ">
 			<motion.div
 				initial={{ opacity: 0 }}
 				whileInView={{ opacity: 1 }}

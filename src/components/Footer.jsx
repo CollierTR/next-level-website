@@ -29,7 +29,7 @@ export default function Footer() {
 						<motion.img
 							src="/Next Level (text only).png"
 							alt="Next Level Logo"
-							className="h-auto w-64 object-contain glow"
+							className="h-auto w-full md:w-64 object-contain glow"
 							initial={{
 								filter: "drop-shadow(0rem 0rem 0.15rem rgb(255, 255, 255))",
 								scale: 1,

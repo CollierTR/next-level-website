@@ -9,7 +9,7 @@ export default function Reviews() {
 
       <div className=' z-20 text-light flex flex-col gap-5 sm:gap-12 justify-center place-items-center w-full'>
         <h2 className="text-4xl sm:text-6xl ">Testimonials</h2>
-        <div className="flex flex-col lg:flex-row justify-center place-items-start gap-6 w-full">
+        <div className="flex flex-col lg:flex-row justify-center place-items-center md:place-items-start gap-6 w-full">
           <ReviewCard 
             author="Kyle Penrod"
             date="6/20/2024"
