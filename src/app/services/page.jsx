@@ -27,9 +27,9 @@ const servicesTest = await Promise.all(filenames.map(async (filename) => {
 
 export default function ProjectsPage() {
 	return (
-		<main className="text-2xl pt-40">
-			<h1 className="text-center text-7xl mb-20">Services</h1>
-			<div className="w-10/12 flex flex-col gap-20 justify-center place-items-center mx-auto">
+		<main className="md:text-2xl pt-40">
+			<h1 className="text-center text-6xl md:text-7xl mb-20">Services</h1>
+			<div className="w-10/12 flex flex-col gap-10 md:gap-20 justify-center place-items-center mx-auto">
 				{
 					servicesTest.map((service, index) => (
 						<LargeServiceCard

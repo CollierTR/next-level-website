@@ -1,35 +1,29 @@
 "use client";
 
-import {
-	motion,
-	easeInOut,
-	spring,
-} from "motion/react";
+import { motion, easeInOut, spring, AnimatePresence } from "motion/react";
 
-import {
-	faBars,
-	faCircle,
-	faClose,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { createPortal } from "react-dom";
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
 export default function Nav() {
-	const pathName = usePathname()
+	const pathName = usePathname();
+	const [animationPresent, setAnimationPresent] = useState(false);
 
 	const reducer = (state, action) => {
 		switch (action.type) {
 			case "openNav":
-				document.getElementById("main").classList.add("no-scroll");
+				// document.getElementById("main").classList.add("no-scroll");
+				setAnimationPresent(true);
 				return { navMenu: "open" };
 			case "closeNav":
-				document.getElementById("main").classList.remove("no-scroll");
+				// document.getElementById("main").classList.remove("no-scroll");
+				setAnimationPresent(false);
 				return { navMenu: "closed" };
 			default:
 				console.log("something went wrong!");
@@ -77,36 +71,70 @@ export default function Nav() {
 			</div>
 
 			{/* Nav Menu */}
-			{state.navMenu == "open" &&
-				createPortal(
-					<div
+			<AnimatePresence>
+				{animationPresent && (
+					<motion.div
+						key="nav-menu"
+						initial={{ x: 400 }}
+						animate={{ x: 0, transition: { duration: 0.7, ease: "easeOut" } }}
+						exit={{ x: 700, transition: { duration: 0.7, ease: "easeIn" } }}
 						className="fixed w-full bg-transparent h-screen top-0 right-0 z-[100] flex justify-end"
 						onClick={() => dispatch({ type: "closeNav" })}
 					>
 						<div
-							className="flex flex-col w-10/12 md:w-1/3 xl:w-1/4 bg-primary-dark border-l-2 border-white rounded-l-2xl relative drop-shadow-black  drop-shadow-2xl"
-							onClick={(e) => {
-								e.stopPropagation();
-							}}
+							className="flex flex-col w-10/12 md:w-1/3 xl:w-1/4 bg-primary-dark border-l-2 border-white rounded-l-2xl relative drop-shadow-black drop-shadow-2xl"
+							onClick={(e) => e.stopPropagation()}
 						>
-								<FontAwesomeIcon
-									icon={faClose}
-									mask={faCircle}
-									className="text-4xl cursor-pointer absolute top-6 right-6"
-									color="white"
-									onClick={() => dispatch({ type: "closeNav" })}
-								/>
+							<FontAwesomeIcon
+								icon={faClose}
+								className="text-4xl cursor-pointer absolute top-6 right-6"
+								color="white"
+								onClick={() => dispatch({ type: "closeNav" })}
+							/>
 							<div className="flex flex-col grow justify-center place-items-center gap-10 2xl:gap-20 text-4xl text-white">
-								<Link href={"/"} onClick={() => dispatch({ type: "closeNav" })} className={`link ${pathName === '/' ? ' ' : 'text-gray-400'}`}>Home</Link>
-								<Link href={"/contact"} onClick={() => dispatch({ type: "closeNav" })}  className={`link ${pathName === '/contact' ? '' : 'text-gray-400'}`}>Contact</Link>
-								<Link href={"/services"} onClick={() => dispatch({ type: "closeNav" })}  className={`link ${pathName === '/services' ? '' : 'text-gray-400'}`}>Services</Link>
-								{/* <Link href={"/about"} className={`link ${pathName === '/about' ? '' : 'text-gray-400'}`}>About</Link> */}
+								<Link
+									href="/"
+									onClick={() =>
+										dispatch({ type: "closeNav" })
+									}
+									className={`link ${
+										pathName === "/" ? "" : "text-gray-400"
+									}`}
+								>
+									Home
+								</Link>
+								<Link
+									href="/contact"
+									onClick={() =>
+										dispatch({ type: "closeNav" })
+									}
+									className={`link ${
+										pathName === "/contact"
+											? ""
+											: "text-gray-400"
+									}`}
+								>
+									Contact
+								</Link>
+								<Link
+									href="/services"
+									onClick={() =>
+										dispatch({ type: "closeNav" })
+									}
+									className={`link ${
+										pathName === "/services"
+											? ""
+											: "text-gray-400"
+									}`}
+								>
+									Services
+								</Link>
 							</div>
 						</div>
-					</div>,
-
-					document.body
+					</motion.div>
 				)}
+			</AnimatePresence>
+
 			{/* End of Nav Menu */}
 		</div>
 	);

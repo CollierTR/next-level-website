@@ -44,7 +44,7 @@ export default function ServiceCard({
 				},
 			}}
 			transition={{ duration: 3 }}
-			className="flex flex-col bg-primary-dark text-white justify-start place-items-center sm:w-1/2 md:1/5 xl:w-[28%] rounded-xl overflow-hidden"
+			className="flex flex-col bg-primary-dark text-white justify-start place-items-center sm:w-2/3 mx-auto md:1/5 xl:w-[28%] rounded-xl overflow-hidden"
 		>
 			<div className="flex flex-col gap-6 justify-center place-items-center py-8 px-6 text-balance">
 				{children ? (

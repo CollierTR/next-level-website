@@ -20,7 +20,7 @@ export default function Footer() {
 
 	return (
 		<footer>
-			<div className="w-full py-8 mt-24 flex flex-col justify-center gap-8  place-items-center border-t-2 border-t-primary text-white">
+			<div className="w-full py-8 mt-24 flex flex-col justify-center lg:gap-8  place-items-center border-t-2 border-t-primary text-white">
 				<div className="flex w-6/7 px-6 text-4xl  justify-center place-items-center">
 					<div className="flex flex-col md:flex-row  gap-6 justify-between w-full">
 						{/* <p className="lg:text-start text-center">
@@ -29,7 +29,7 @@ export default function Footer() {
 						<motion.img
 							src="/Next Level (text only).png"
 							alt="Next Level Logo"
-							className="h-auto w-full md:w-64 object-contain glow"
+							className="h-auto w-full md:w-64 object-contain glow max-w-xs mx-auto md:mx-0"
 							initial={{
 								filter: "drop-shadow(0rem 0rem 0.15rem rgb(255, 255, 255))",
 								scale: 1,
@@ -79,7 +79,7 @@ export default function Footer() {
 					</div>
 				</div>
 
-				<div className="flex text-lg justify-between flex-col md:flex-row gap-4  place-items-center border-t-2 w-6/7 p-6 border-t-primary pt-6">
+				<div className="flex text-lg justify-between flex-col md:flex-row gap-4  place-items-center border-t-2 w-6/7 p-6 border-t-primary lg:pt-6">
 					<div className="flex justify-center gap-4 text-2xl text-primary lg:text-white">
 						<Link href={"/"}>
 							<p className="hover:text-primary-light">Home</p>

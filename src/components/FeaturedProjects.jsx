@@ -14,7 +14,7 @@ export default function FeaturedProjects() {
 				</Link>
 			</div>
 
-			<div className="flex flex-col lg:flex-row gap-6 mt-8 md:mt-14">
+			<div className="flex flex-col lg:flex-row gap-6 mt-8 md:mt-14 px-3">
 				{
 					filteredProjects.map((project) => (
 						<ProjectCard 

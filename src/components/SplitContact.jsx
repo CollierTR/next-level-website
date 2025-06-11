@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const SplitContact = () => {
 	return (
@@ -16,15 +18,17 @@ const SplitContact = () => {
 				</p>
 				<div className="flex gap-6">
 					<Link
-						href={"/services"}
-						className="bg-white text-lg md:text-2xl rounded-lg py-1 md:py-2 hover:scale-105 font-semibold px-4"
+						href={"tel:5402206532"}
+						className="bg-white text-lg md:text-2xl rounded-lg py-1 md:py-2 hover:scale-105 font-semibold px-8"
 					>
+						<FontAwesomeIcon icon={faPhone} className="pr-2"/>
 						Call
 					</Link>
 					<Link
-						href={"/services"}
-						className="bg-white text-lg md:text-2xl rounded-lg py-1 md:py-2 hover:scale-105 font-semibold px-4"
+						href={"mailto:tristancollier777@gmail.com"}
+						className="bg-white text-lg md:text-2xl rounded-lg py-1 md:py-2 hover:scale-105 font-semibold px-8"
 					>
+						<FontAwesomeIcon icon={faEnvelope} className="pr-2"/>
 						Email
 					</Link>
 				</div>
