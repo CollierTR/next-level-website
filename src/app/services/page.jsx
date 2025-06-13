@@ -24,6 +24,9 @@ const servicesTest = await Promise.all(filenames.map(async (filename) => {
   }
 }))
 
+// Set the sort order of the Services on the service page
+servicesTest.sort((a, b) => a.order - b.order)
+
 
 export default function ProjectsPage() {
 	return (

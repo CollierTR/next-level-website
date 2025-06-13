@@ -60,7 +60,7 @@ export default function ServiceCard({
 				<h3 className="text-3xl md:text-4xl ">{title}</h3>
 				<p className="text-pretty text-lg md:text-xl">{text}</p>
 				<Link
-					href={"/services"}
+					href={href}
 					className="bg-white text-xl md:text-2xl rounded-lg py-2 md:py-2 font-semibold px-4 text-black"
 				>
 					Learn more

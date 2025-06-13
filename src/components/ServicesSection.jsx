@@ -28,6 +28,7 @@ export default function ServicesSection() {
 				<div className="flex flex-col gap-6  xl:flex-row justify-center md:justify-evenly place-items-stretch w-10/12 md:11/12 mt-2 md:mt-12">
 					<ServiceCard
 						title="Websites"
+						href='/services/web-development'
 						text="
 						Ensure your business reaches its full potential with our
 						professional website design services. We create visually
@@ -45,6 +46,7 @@ export default function ServicesSection() {
 					</ServiceCard>
 					<ServiceCard
 						title="Custom Software"
+						href='/services/software-development'
 						text="
 						Streamline your operations with our bespoke software
 						solutions. We design, develop, and deploy software
@@ -61,6 +63,7 @@ export default function ServicesSection() {
 					</ServiceCard>
 					<ServiceCard
 						title="Data Analytics"
+						href='/services/data-analytics'
 						text="
 						Harness the power of your data with our expert analytics
 						services. We provide actionable insights to help you
