@@ -165,3 +165,7 @@ h1, h2, h3, h4, h5, h6 {
 	-webkit-filter: drop-shadow(12px 12px 7px rgba(0, 247, 33, 1));
 	filter: drop-shadow(2px 2px 2px rgb(255, 255, 255));
 }
+
+.full-width {
+	width: 100% !important;
+}

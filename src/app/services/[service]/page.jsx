@@ -76,11 +76,8 @@ export default async function ProjectPage({ params }) {
 
 	return (
 		<main>
-			<div className="text-white flex flex-col justify-center place-items-start md:place-items-center gap-3 md:gap-6 prose-md md:prose-xl md:prose-headings:text-center prose-headings:mt-4 prose-ul:list-none lg:prose-h2:text-5xl prose-h2:text-2xl prose-h3:text-xl md:prose-h3:text-3xl w-full md:w-2/3 md:text-center text-pretty min-h-screen pt-40 px-20 mx-auto">
-				<h1 className="lg:text-6xl text-4xl text-center place-self-center">{frontmatter.title}</h1>
-				<p className="text-center text-2xl md:text-2xl text-balance mt-2">
-					{frontmatter.description}
-				</p>
+			<div className="text-white w-4/5 max-w-[1000px] flex flex-col justify-center place-items-start gap-4 mx-auto py-20 md:py-40 prose-h2:text-3xl lg:prose-h2:text-5xl prose-h2:mt-6 prose-h3:text-xl md:prose-h3:text-3xl prose-h3:mt-6 prose-p:text-lg">
+				<h1 className="lg:text-6xl text-4xl text-center place-self-center mb-2 md:mb-6">{frontmatter.title}</h1>
 				<img
 					src={frontmatter.img}
 					alt={frontmatter.imgAlt}

@@ -76,8 +76,8 @@ export default function Nav() {
 					<motion.div
 						key="nav-menu"
 						initial={{ x: 400 }}
-						animate={{ x: 0, transition: { duration: 0.7, ease: "easeOut" } }}
-						exit={{ x: 700, transition: { duration: 0.7, ease: "easeIn" } }}
+						animate={{ x: 0, transition: { duration: 0.5, ease: "easeOut" } }}
+						exit={{ x: 700, transition: { duration: 0.5, ease: "easeIn" } }}
 						className="fixed w-full bg-transparent h-screen top-0 right-0 z-[100] flex justify-end"
 						onClick={() => dispatch({ type: "closeNav" })}
 					>
