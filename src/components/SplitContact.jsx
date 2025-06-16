@@ -80,7 +80,7 @@ const SplitContact = () => {
 						className="flex flex-col gap-4 md:gap-6 place-items-center"
 						name="Next Level Contact Page"
 						action={handleSubmit}
-						// onSubmit={() => setFormVisibility(false)}
+						onSubmit={() => setFormVisibility(false)}
 					>
 						<span className="flex gap-2 flex-col md:w-3/4 w-10/12">
 							<input
