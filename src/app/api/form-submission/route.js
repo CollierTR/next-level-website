@@ -21,36 +21,34 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(req, res) {
-	console.log("calling the function");
-	try {
-		const body = await req.json();
-		console.log(body);
+export async function POST(req) {
+  console.log("calling the function");
+  try {
+    const body = await req.json();
+    console.log(body);
 
-		mailOptions.text = `
-    Form: ${body.formName}
-    Name: ${body.firstName} ${body.lastName}
-    Email: ${body.email}
-    ${body.marketingConsent ? "Consented to marketing: True" : "Consented to marketing: False"}
+    mailOptions.text = `
+      Form: ${body.formName}
+      Name: ${body.firstName} ${body.lastName}
+      Email: ${body.email}
+      ${body.marketingConsent ? "Consented to marketing: True" : "Consented to marketing: False"}
 
-    ${body.message ? body.message : "No Message."}
+      ${body.message ? body.message : "No Message."}
     `;
 
-		resend.emails.send({
-			from: "onboarding@resend.dev",
-			to: "tristancollier777@gmail.com",
-			subject: "New Form Submission!",
-      text: mailOptions.text
-		});
-		// const info = await transporter.sendMail(mailOptions);
-		// console.log("Message sent:", info.message);
+    await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: "tristancollier777@gmail.com",
+      subject: "New Form Submission!",
+      text: mailOptions.text,
+    });
 
-		//return a response
-		return new Response("Success!", { status: 200 });
-	} catch (error) {
-		console.error("Error parsing request body:", error);
-		return new Response("Error parsing request body", { status: 400 });
-	}
+    console.log("Email sent successfully");
+    return new Response("Success!", { status: 200 });
+  } catch (error) {
+    console.error("Error parsing request body:", error);
+    return new Response("Error parsing request body", { status: 400 });
+  }
 }
 
 export async function GET(req, res) {
