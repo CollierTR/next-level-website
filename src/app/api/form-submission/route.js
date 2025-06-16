@@ -1,3 +1,6 @@
+const MC_KEY = process.env.MAIL_CHIMP_KEY // for use later
+
+
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
@@ -15,13 +18,8 @@ const mailOptions = {
   text: "",
 };
 
-
-
-const MC_KEY = process.env.MAIL_CHIMP_KEY // for use later
-
-
-
 export async function POST(req) {
+  console.log('calling the function')
   try {
     const body = await req.json();
     console.log(body);
