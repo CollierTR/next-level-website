@@ -35,13 +35,12 @@ const handleSubmit = async (e) => {
 
 	axios
 		// .post("http://localhost:3000/api/form-submission", postObject)
-		.post("http://www.nextlevelmo.com/api/form-submission", postObject)
+		.post("https://www.nextlevelmo.com/api/form-submission", postObject)
 		.then((res) => {
 			console.log(res.data);
 		})
 		.catch((error) => {
-			console.log(error);
-			new Error(error);
+			console.error("Error submitting form:", error.response?.data || error.message);
 		});
 };
 
