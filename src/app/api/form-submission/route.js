@@ -3,38 +3,38 @@
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
-  service: "Gmail",
-  auth: {
-    user: process.env.GMAIL_USERNAME,
-    pass: process.env.GMAIL_PASSWORD,
-  }
+	service: "Gmail",
+	auth: {
+		user: process.env.GMAIL_USERNAME,
+		pass: process.env.GMAIL_PASSWORD,
+	},
 });
 
 const mailOptions = {
-  from: process.env.GMAIL_USERNAME,
-  to: process.env.GMAIL_USERNAME,
-  subject: "New Form Submission from NextLevelMO.com",
-  text: "",
+	from: process.env.GMAIL_USERNAME,
+	to: process.env.GMAIL_USERNAME,
+	subject: "New Form Submission from NextLevelMO.com",
+	text: "",
 };
 
-import { Resend } from "resend";
+// import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req) {
-  console.log("calling the POST function");
-  // try {
-  //   const body = await req.json();
-  //   console.log(body);
+	console.log("calling the POST function");
+	try {
+	  const body = await req.json();
+	  console.log(body);
 
-  //   mailOptions.text = `
-  //     Form: ${body.formName}
-  //     Name: ${body.firstName} ${body.lastName}
-  //     Email: ${body.email}
-  //     ${body.marketingConsent ? "Consented to marketing: True" : "Consented to marketing: False"}
+	  mailOptions.text = `
+	    Form: ${body.formName}
+	    Name: ${body.firstName} ${body.lastName}
+	    Email: ${body.email}
+	    ${body.marketingConsent ? "Consented to marketing: True" : "Consented to marketing: False"}
 
-  //     ${body.message ? body.message : "No Message."}
-  //   `;
+	    ${body.message ? body.message : "No Message."}
+    `;
 
     // await resend.emails.send({
     //   from: "onboarding@resend.dev",
@@ -43,17 +43,16 @@ export async function POST(req) {
     //   text: mailOptions.text,
     // });
 
-  //   transporter.sendMail(mailOptions, (error) => {
-  //     console.log(error);
-  //   })
+    transporter.sendMail(mailOptions, (error) => {
+      console.log(error);
+    })
 
-  //   console.log("Email sent successfully");
-  //   return new Response("Success!", { status: 200 });
-  // } catch (error) {
-  //   console.error("Error parsing request body:", error);
-  //   return new Response("Error parsing request body", { status: 400 });
-  // }
-	return new Response("Success!");
+    console.log("Email sent successfully");
+    return new Response("Success!", { status: 200 });
+  } catch (error) {
+    console.error("Error parsing request body:", error);
+    return new Response("Error parsing request body", { status: 400 });
+  }
 }
 
 export async function GET(req, res) {

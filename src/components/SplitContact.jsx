@@ -5,10 +5,10 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
-// import { Resend } from "resend";
+import { Resend } from "resend";
 
 
-// const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const handleSubmit = async (e) => {
 	const marketingConsent = e.get("marketingConsent");
@@ -42,7 +42,7 @@ const handleSubmit = async (e) => {
     // });
 
 	axios
-		.post("http://localhost:3000/api/form-submission", postObject)
+		.post("http://www.nextlevelmo.com/api/form-submission", postObject)
 		.then((res) => {
 			console.log(res.data);
 		})
