@@ -37,7 +37,7 @@ export async function POST(request) {
     `;
 
     resend.emails.send({
-			from: "contact@nextlevelmo.com",
+			from: "onboarding@resend.dev",
 			to: "tristancollier777@gmail.com",
 			subject: "New Form Submission!",
       text: mailOptions.text
