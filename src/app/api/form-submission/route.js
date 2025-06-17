@@ -36,13 +36,6 @@ export async function POST(req) {
 	    ${body.message ? body.message : "No Message."}
     `;
 
-    // await resend.emails.send({
-    //   from: "onboarding@resend.dev",
-    //   to: "tristancollier777@gmail.com",
-    //   subject: "New Form Submission!",
-    //   text: mailOptions.text,
-    // });
-
     transporter.sendMail(mailOptions, (error) => {
       console.log(error);
     })
