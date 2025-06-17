@@ -17,14 +17,37 @@ const mailOptions = {
 	text: "",
 };
 
-// import { Resend } from "resend";
-
-// const resend = new Resend(process.env.RESEND_API_KEY);
-
-export async function POST(req) {
+export async function POST(request) {
 	console.log("calling the POST function");
 	try {
-	  const body = await req.json();
+	  const body = await request.json();
+	  console.log(body);
+
+	  mailOptions.text = `
+	    Form: ${body.formName}
+	    Name: ${body.firstName} ${body.lastName}
+	    Email: ${body.email}
+	    ${body.marketingConsent ? "Consented to marketing: True" : "Consented to marketing: False"}
+
+	    ${body.message ? body.message : "No Message."}
+    `;
+
+    transporter.sendMail(mailOptions, (error) => {
+      console.log(error);
+    })
+
+    console.log("Email sent successfully");
+    return new Response("Success!", { status: 200 });
+  } catch (error) {
+    console.error("Error parsing request body:", error);
+    return new Response("Error parsing request body", { status: 400 });
+  }
+}
+
+export async function PATCH(request) {
+	console.log("calling the POST function");
+	try {
+	  const body = await request.json();
 	  console.log(body);
 
 	  mailOptions.text = `
