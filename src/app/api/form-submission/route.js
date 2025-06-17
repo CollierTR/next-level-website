@@ -56,7 +56,7 @@ export async function POST(request) {
 }
 
 export async function PATCH(request) {
-	console.log("calling the POST function");
+	console.log("calling the PATCH function");
 	try {
 	  const body = await request.json();
 	  console.log(body);
