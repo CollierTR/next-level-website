@@ -1,14 +1,14 @@
-// const MC_KEY = process.env.MAIL_CHIMP_KEY // for use later
+// // const MC_KEY = process.env.MAIL_CHIMP_KEY // for use later
 
-import nodemailer from "nodemailer";
+// import nodemailer from "nodemailer";
 
-const transporter = nodemailer.createTransport({
-	service: "Gmail",
-	auth: {
-		user: process.env.GMAIL_USERNAME,
-		pass: process.env.GMAIL_PASSWORD,
-	},
-});
+// const transporter = nodemailer.createTransport({
+// 	service: "Gmail",
+// 	auth: {
+// 		user: process.env.GMAIL_USERNAME,
+// 		pass: process.env.GMAIL_PASSWORD,
+// 	},
+// });
 
 const mailOptions = {
 	from: process.env.GMAIL_USERNAME,
@@ -16,6 +16,10 @@ const mailOptions = {
 	subject: "New Form Submission from NextLevelMO.com",
 	text: "",
 };
+
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
 	console.log("calling the POST function");
@@ -32,9 +36,16 @@ export async function POST(request) {
 	    ${body.message ? body.message : "No Message."}
     `;
 
-    transporter.sendMail(mailOptions, (error) => {
-      console.log(error);
-    })
+    resend.emails.send({
+			from: "onboarding@resend.dev",
+			to: "tristancollier777@gmail.com",
+			subject: "New Form Submission!",
+      text: mailOptions.text
+		});
+
+    // transporter.sendMail(mailOptions, (error) => {
+    //   console.log(error);
+    // })
 
     console.log("Email sent successfully");
     return new Response("Success!", { status: 200 });
