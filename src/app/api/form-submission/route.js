@@ -1,14 +1,6 @@
-// // const MC_KEY = process.env.MAIL_CHIMP_KEY // for use later
+// import { getRateLimitMiddlewares } from "../../../middleware";
+// const middlewares = getRateLimitMiddlewares({ limit: 40 }).map(applyMiddleware);
 
-// import nodemailer from "nodemailer";
-
-// const transporter = nodemailer.createTransport({
-// 	service: "Gmail",
-// 	auth: {
-// 		user: process.env.GMAIL_USERNAME,
-// 		pass: process.env.GMAIL_PASSWORD,
-// 	},
-// });
 
 const mailOptions = {
 	from: process.env.GMAIL_USERNAME,
@@ -19,15 +11,22 @@ const mailOptions = {
 
 import { Resend } from "resend";
 
-// const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
 	console.log("calling the POST function");
+	// try {
+	// 	await Promise.all(
+	// 		middlewares.map((middleware) => middleware(request, response))
+	// 	);
+	// } catch {
+	// 	return response.status(429).send("Too Many Requests");
+	// }
 	try {
-	  const body = await request.json();
-	  console.log(body);
+		const body = await request.json();
+		console.log(body);
 
-	  mailOptions.text = `
+		mailOptions.text = `
 	    Form: ${body.formName}
 	    Name: ${body.firstName} ${body.lastName}
 	    Email: ${body.email}
@@ -36,32 +35,28 @@ export async function POST(request) {
 	    ${body.message ? body.message : "No Message."}
     `;
 
-    resend.emails.send({
+		resend.emails.send({
 			from: "onboarding@resend.dev",
 			to: "tristancollier777@gmail.com",
 			subject: "New Form Submission!",
-      text: mailOptions.text
+			text: mailOptions.text,
 		});
 
-    // transporter.sendMail(mailOptions, (error) => {
-    //   console.log(error);
-    // })
-
-    console.log("Email sent successfully");
-    return new Response("Success!", { status: 200 });
-  } catch (error) {
-    console.error("Error parsing request body:", error);
-    return new Response("Error parsing request body", { status: 400 });
-  }
+		console.log("Email sent successfully");
+		return new Response("Success!", { status: 200 });
+	} catch (error) {
+		console.error("Error parsing request body:", error);
+		return new Response("Error parsing request body", { status: 400 });
+	}
 }
 
 export async function PATCH(request) {
 	console.log("calling the PATCH function");
 	try {
-	  const body = await request.json();
-	  console.log(body);
+		const body = await request.json();
+		console.log(body);
 
-	  mailOptions.text = `
+		mailOptions.text = `
 	    Form: ${body.formName}
 	    Name: ${body.firstName} ${body.lastName}
 	    Email: ${body.email}
@@ -70,16 +65,16 @@ export async function PATCH(request) {
 	    ${body.message ? body.message : "No Message."}
     `;
 
-    transporter.sendMail(mailOptions, (error) => {
-      console.log(error);
-    })
+		transporter.sendMail(mailOptions, (error) => {
+			console.log(error);
+		});
 
-    console.log("Email sent successfully");
-    return new Response("Success!", { status: 200 });
-  } catch (error) {
-    console.error("Error parsing request body:", error);
-    return new Response("Error parsing request body", { status: 400 });
-  }
+		console.log("Email sent successfully");
+		return new Response("Success!", { status: 200 });
+	} catch (error) {
+		console.error("Error parsing request body:", error);
+		return new Response("Error parsing request body", { status: 400 });
+	}
 }
 
 export async function GET(req, res) {
