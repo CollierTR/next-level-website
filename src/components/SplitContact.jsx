@@ -34,8 +34,8 @@ const handleSubmit = async (e) => {
 
 
 	axios
-		// .post("http://localhost:3000/api/form-submission", postObject)
-		.post("https://www.nextlevelmo.com/api/form-submission", postObject)
+		.post("http://localhost:3000/api/form-submission", postObject)
+		// .post("https://www.nextlevelmo.com/api/form-submission", postObject)
 		.then((res) => {
 			console.log(res.data);
 		})
@@ -78,7 +78,7 @@ const SplitContact = () => {
 				</div>
 			</div>
 
-			{formVisibility ? (
+			{/* {formVisibility ? (
 				<div className="lg:w-5/12 w-full  sm:w-9/12">
 					<form
 						className="flex flex-col gap-4 md:gap-6 place-items-center"
@@ -182,7 +182,7 @@ const SplitContact = () => {
 						We will reach out to you shortly.
 					</p>
 				</div>
-			)}
+			)} */}
 		</div>
 	);
 };
